@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="icon" type="image/x-icon" href="logo12.jpg">
+        
+        
+        <title>Jhon Rey Aquino</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
+            
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/vegas.min.css" rel="stylesheet">
+
+        <link href="css/tooplate-barista.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <style>
+            .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            }
+
+            .fa:hover {
+             opacity: 0.7;
+            }
+
+            .fa-facebook {
+             background: #3B5998;
+            color: white;
+                }
+            
+            le>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .game {
+            height: 60vmin;
+            width: 60vmin;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5vmin;
+            justify-content: center;
+        }
+        .box {
+            height: 18vmin;
+            width: 18vmin;
+            border-radius: 1rem;
+            border: none;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+            font-size: 8vmin;
+            color: red;
+            background-color: yellow;
+        }
+        #reset {
+            padding: 1rem;
+            font-size: 1.25rem;
+            background: #191913;
+            color: white;
+            border-radius: 1rem;
+            border: none;
+        }
+        .box:hover {
+            background-color: chocolate;
+        }
+        #new-btn {
+            padding: 1rem;
+            font-size: 1.25rem;
+            background: #191913;
+            color: white;
+            border-radius: 1rem;
+            border: none;
+        }
+        #msg {
+            font-size: 8vmin;
+            color: white;
+        }
+        .msg-container {
+            height: 30vmin;
+        }
+        .hide {
+            display: none;
+        }
+
+               .containers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #77DD77;
+        }
+
+        /* styles.css */
+/* universal selector - Applies to whole document */
+
+/* To center everything in game */
+.gameR{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title of the game */
+.title{
+    font-size: 4rem;
+   margin-top: 10px;
+}
+
+/* Score Board */
+.score{
+    display: flex;
+    width: 30vw;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.score h2 {
+  margin: 0 20px; /* Adds 20px gap on left and right of each h2 */
+}
+
+/* Score  */
+.p-count,.c-count{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+
+/* displaying three buttons in one line */
+.options{
+    display: flex;
+    width: 50vw;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+
+/* Styling on all three buttons */
+.rock, .paper, .scissor{
+    padding: 0.8rem;
+    width: 100px;
+    border-radius: 10px;
+    background: green;
+    outline: none;
+    border-color: green;
+    border: none;
+    cursor: pointer;
+}
+
+.move{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Reload button style */
+.reload {
+    display: none;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: green;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.result{
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 612px)
+{  
+    .title{
+        text-align: center;
+    }
+    .score{
+        position: absolute;
+        top: 200px;
+        width: 100vw;
+    }
+    .options{
+        width: 100vw;
+    }
+}
+
+.card {
+    min-width: 30%;
+    width: 50vh;
+    min-height: 30vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: auto;
+    padding: 2%;
+}
+
+/* Font and display style for complete body */
+.bodys {
+    display: flex;
+    text-align: center;
+    font-family: "Gill Sans", 
+                   "Gill Sans MT", 
+                   Calibri, "Trebuchet MS",
+                 sans-serif;
+}
+
+/* Adding style for input box */
+input {
+    width: 30px;
+    padding: 1%;
+    font-size: larger;
+    text-align: center;
+    margin-left: 2%;
+}
+
+/* Adding style for display word*/
+#displayWord {
+    font-size: xx-large;
+}
+
+        .containier {
+             display: flex;
+            border: 4px solid #333;
+            padding: 80px;
+            background-color: #028402;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: block;
+            width: 200px;
+            padding: 15px;
+            margin: 3px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid #000;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button.choice1 {
+            background-color: #ff6b6b;
+        }
+
+        .button.choice2 {
+            background-color: #4ecdc4;
+        }
+
+        .button.choice3 {
+            background-color: #ffe66d;
+        }
+
+            .bodier {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        </style>
+    </head>
+    
+    <body>
+                
+            <main>
+                <nav class="navbar navbar-expand-lg">                
+                    <div class="container">
+                        <a class="navbar-brand d-flex align-items-center" href="index.html">
+                           Jhon Rey's Website                       
+                        </a>
+        
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+        
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-lg-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_1">Home</a>
+                                </li>
+        
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_2">About</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_3">Biography
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_4">Projects</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_5">Contact Me</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+
+                    <div class="container">
+                        <div class="row align-items-center">
+                                
+                            <div class="col-lg-6 col-12 mx-auto">                                
+                                <h1 style="color: #77DD77">Jhonrey Aquino</h1>
+                                <h3 style="color: #77DD77;">Computer Programmer</h3>
+                                <p style="color: #77DD77;">Trust the timing of your life.</p>
+
+                                <a class="btn custom-btn custom-border-btn smoothscroll me-3" href="#section_2">
+                                  About Page
+                                </a>
+
+                                <a class="btn custom-btn smoothscroll me-2 mb-2" href="#section_3"><strong> More Info About Me</strong></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="hero-slides"></div>
+                </section>
+
+
+                <section class="about-section section-padding" id="section_2">
+                    <div class="section-overlay"></div>
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5 col-12 mt-4 mt-lg-0 mx-auto">
+                                <h2 style="color: white;">Description of the Project</h2>
+
+                                <p style="color: white;">This project was solemnly made to further know about Jhon Rey Aquino, a professional computer programmer. Have a thorough look to understand his early life as well as his creative works.</p>
+
+                                <h2 style="color: white;">Technologies Used</h2>
+
+                                <p style="color: white;">The technologies utilized by the web developer are HTML (hyperlink markup language) and CSS (cascading stylesheet). Both markup language are significant in today's era as they are both capable of providing a convenient method to explore various applications that can help in making tasks way easier than before.</p>
+
+                                <a href="#section_3" class="smoothscroll btn custom-btn custom-border-btn mt-3 mb-4">Click To Know Me</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="barista-section section-padding section-bg" id="section_3">
+                    <div class="container">
+                        <div class="row justify-content-center">
+
+                            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+
+                                <h2 style="color: white;">Biography</h2>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-12 mb-4">
+                                <div class="team-block-wrap">
+                                    <div class="team-block-info d-flex flex-column">
+                                        <div class="d-flex mt-auto mb-3">
+                                            
+
+                               
+                                        </div>
+                                   
+
+                                    </div>
+
+                                    <div class="team-block-image-wrap">
+                                        <img src="images/team/johnrey3.jpg" class="team-block-image img-fluid" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-12 mb-4">
+                                <div class="team-block-wrap">
+                                    <div class="team-block-info d-flex flex-column">
+                                        <div class="d-flex mt-auto mb-3">
+                                            
+
+                                           
+                                        </div>
+
+                                     
+                                    </div>
+
+                                    <div class="team-block-image-wrap">
+                                        <img src="images/team/johnrey6.jpg" class="team-block-image img-fluid" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                                <div class="team-block-wrap">
+                                    <div class="team-block-info d-flex flex-column">
+                                        <div class="d-flex mt-auto mb-3">
+                                            
+
+                                           
+                                        </div>
+
+                                     
+                                    </div>
+
+                                    <div class="team-block-image-wrap">
+                                        <img src="images/team/johnrey7.jpg" class="team-block-image img-fluid" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="menu-section section-padding" >
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-6 col-12">
+                                <div class="menu-block-wrap">
+                                    <div class="text-center mb-4 pb-lg-2">
+                                        <h4 style="color: white;">Actual self</h4>
+                                    </div>
+
+                                    <div class="menu-block">
+                                        <div class="d-flex" >
+                                            <p style="color: white;">I’m the kind of person who can be outgoing when I need to be, but there are also times when I just want to be alone. I tend to be quiet, especially when I feel drained from too much social interaction. I have a soft heart. I get emotional easily, and I cry over small things. I often find myself thinking a lot about the future, wondering what’s going to happen, and sometimes those thoughts make me anxious.
+I’m very shy, and I often stay silent even when I have something to say. I try my best to stay calm, but I’ll admit, I can get impatient especially when unexpected things happen or when something goes against what I’m comfortable with.
+One thing about me is that I care deeply about others. Even when something is meant for me, I sometimes choose to give it to someone else just to see them smile. I don’t always show it, but I find happiness in making others feel happy. Maybe that’s just how I express love—quiet, simple, and sincere.
+I’m not perfect. I get overwhelmed. I overthink. But I keep going and learning more about myself as time goes on. Even in silence, I grow.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-12">
+                                <div class="menu-block-wrap">
+                                    <div class="text-center mb-4 pb-lg-2">
+                                        <h4 style="color: white;">Ideal Self</h4>
+                                    </div>
+
+                                    <div class="menu-block">
+                                        <div class="d-flex">
+                                            <p style="color: white;">My ideal self is someone strong, someone who doesn’t break easily and who can face problems without giving up. I want to be that version of me who is confident, calm, and knows how to handle pressure with grace.
+I see myself growing more in the things I love, especially in arts, drawing, and music. I want to be someone who writes meaningful songs, creates beautiful drawings, and turns these passions into something big. I dream of being known not for fame, but for touching lives through my creativity.
+I want to become someone who doesn’t overthink too much, who trusts the process, and who believes more in my own strength. I picture myself surrounded by people who inspire me, and I also hope to inspire others through my story.
+In the future, I want to live with purpose. Not just for success, but to bring light to others through my art, kindness, and strength. That’s the version of me I’m working on becoming.</p>
+                                        </div>
+
+                                    </div>   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="reviews-section section-padding section-bg" id="section_4">
+                    <div class="containers">
+                        <div class="row justify-content-center">
+
+                            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+                                <h2 style="color: white;">Project Games</h2>
+                               <div class="bodier"> 
+                                <div class="containier">
+                                    <ul>
+        <a class="button choice1" href="#tic">Tic Tac Toe</a>
+        <a class="button choice2" href="#rock">Rock Paper Scissor</a>
+        <a class="button choice3" href="#gues">Gues The Word</a>
+
+        </ul>
+                                </div>
+                            </div>
+                            
+
+                            <section id="tic">
+                             <h1>Tic Tac Toe</h1>
+                             <p style="color: white;">A game wherein a player will be playing against another player.</p>
+                             <p style="color: white;"> This game, which is very common to the youth since then, is now improved</p>
+                            <p style="color: white;">in a much better and creative version, with the help of </p>
+                            <p style="color: white;">both HTML and CSS. What are you waiting for? Try now!</p>
+                             <div class="msg-container hide">
+                                   <p id="msg">Winner</p>
+                                   <button id="new-btn">New Game</button>
+                             </div>
+                                 <main>
+                                        <div class="containers">
+                                         <div class="game">
+                                         <button class="box"></button>
+                                         <button class="box"></button>
+                                         <button class="box"></button>
+                                         <button class="box"></button>
+                                         <button class="box"></button>
+                                         <button class="box"></button>
+                                         <button class="box"></button>
+                                         <button class="box"></button>
+                                         <button class="box"></button>
+                                   </div>
+                                          </div>
+                                             <button id="reset">Reset Game</button>
+                                         </main>
+                            
+                            
+                            </section>
+             
+    
+            <section class="gameR" id="rock">
+        <!--Title -->
+        <h1>Rock Paper Scissor</h1>
+        <p style="color: white;">This game is now introduced in a digital version by using HTML and CSS.</p>
+        <p style="color: white;">One player will be playing against the computer. In a total of 10 sets</p>
+        <p style="color: white;">this will help determine who the final winner is.</p>   
+        <p style="color: white;">Don't forget to think critically, and outsmart the computer!</p>        
+          <!--Display Score of player and computer -->
+        <div class="score">  
+            <div class="playerScore">
+                <h2>Player</h2>
+                <p class="p-count count">0</p>
+
+            </div>  
+                     
+            <div class="computerScore">
+                <h2>Computer</h2>
+                <p class="c-count count">0</p>
+
+            </div>
+        </div>
+      
+        <div class="move">Choose your move</div>
+        
+          <!--Number of moves left before game ends -->
+        <div class="movesleft">Moves Left: 10 </div>
+        
+          <!--Options available to player to play game -->
+        <div class="options">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissor">Scissors</button>    
+        </div>
+        
+          <!--Final result of game -->
+        <div class="result"></div>
+        
+          <!--Reload the game -->
+        <button class="reload"></button>
+
+       </section>
+    </div>
+
+<section id="gues">
+<div class="bodys" >
+        <div class="card">
+        <h1 style="background-color: rgb(231, 231, 231);
+    color: green;
+    font-size: xx-large;
+    padding: 2%;">Guess the word</h1>
+            <p > HTML and CSS gives you a very unique challenge. All you have to do is read the clues and guess the word. Maximize your imagination and give your best shot!</p>   
+
+        <p>
+              <b>Hint:</b> A programming language
+          </p>
+        <p id="displayWord"></p>
+        <p>Guess one letter:
+
+            <input type="text" 
+                   maxlength="1" 
+                   id="letter-input">
+        </p>
+        <button onclick="guessLetter()">
+              Submit
+          </button>
+    </div>
+</div>  
+</section>
+                            <!--adddd gamess-->
+                           </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="contact-section section-padding" id="section_5">
+                    <div class="container">
+                        <div class="row">   
+
+                            <div class="col-lg-12 col-12">
+                                <em style="color: white;">Say Hello</em>
+                                <h2 class="mb-4 pb-lg-2" style="color: white;">Contact</h2>
+                            </div>
+
+                            <div class="col-lg-6 col-12">
+                                <form action="#" method="post" class="custom-form contact-form" role="form">
+
+                                <div class="row">
+                                    
+                                    <div class="col-lg-6 col-12">
+                                        <label for="name" class="form-label">Name <sup class="text-danger"></sup></label>
+
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">
+                                        <label for="email" class="form-label">Email Address</label>
+
+                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="User@gmail.com" required="">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">How can I help?</label>
+
+                                        <textarea name="message" rows="4" class="form-control" id="message" placeholder="Message" required=""></textarea>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 col-12 mx-auto mt-3">
+                                    <button type="submit" class="form-control">Send Message</button>
+                                </div>
+                            </form>
+                            </div>
+
+                            <div class="col-lg-6 col-12 mx-auto mt-5 mt-lg-0 ps-lg-5">
+                                <iframe class ="google-map"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d983.6606714251128!2d120.99184399754321!3d14.396027402457793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d19c55e9dfc5%3A0x54c45825ae1236ff!2sJamprintshop%20bacoor!5e0!3m2!1sen!2sph!4v1750953782482!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                            </div>
+                    
+                            </div>
+                    </div>
+                </section>
+
+
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-4 col-12 me-auto">
+                                <em class="d-block mb-4" style="color: white;">Where to find Me?</em>
+
+                                <strong style="color: white;">
+                                    Queens Row Reyna Elena, St. Blk 27 Lot 12, Bacoor City, Cavite
+                                </strong>
+                                <ul class="social-icon mt-4">
+                                    <li class="social-icon-item" >
+                                        <a href="https://www.facebook.com/nexxt27" class="fa fa-facebook">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
+                                <em class="d-block mb-4" style="color: white;">Contact</em>
+
+                                <p class="d-flex mb-1">
+                                    <strong class="me-2">Phone:</strong>
+                                    <a href="Tel:09552795443" class="site-footer-link">
+                                        09552795443
+                                    </a>
+                                </p>
+
+                                <p class="d-flex">
+                                    <strong class="me-2">Email:</strong>
+
+                                    <a href="mailto:jhonreyaquino08@gmail.com" class="site-footer-link">
+                                        jhonreyaquino08@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+
+                            <div class="col-lg-8 col-12 mt-4">
+                                <p class="copyright-text mb-0"> 
+                                Aquino, Jhon Rey, BSCS, ITEC Final Project
+                                </p>
+                            </div>
+                    </div>
+                </footer>
+            </main>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/vegas.min.js"></script>
+        <script src="js/custom.js"></script>
+
+            <script>
+        let boxes = document.querySelectorAll('.box');
+        let resetBtn = document.querySelector('#reset');
+        let turnO = true; // Player O starts
+        let newGameBtn = document.querySelector('#new-btn');
+        let msgContainer = document.querySelector('.msg-container');
+        let msg = document.querySelector('#msg');
+
+        const winPatterns = [
+            [0, 1, 2],
+            [0, 3, 6],
+            [0, 4, 8],
+            [1, 4, 7],
+            [2, 5, 8],
+            [2, 4, 6],
+            [3, 4, 5],
+            [6, 7, 8]
+        ];
+
+        boxes.forEach((box) => {
+            box.addEventListener('click', function () {
+                if (turnO) {
+                    box.innerText = 'O';
+                    box.style.color = 'green';
+                    turnO = false;
+                    box.disabled = true;
+                    checkWinner();
+                } else {
+                    box.innerText = 'X';
+                    box.style.color = 'black';
+                    turnO = true;
+                    box.disabled = true;
+                    checkWinner();
+                }
+            });
+        });
+
+        const enableBoxes = () => {
+            for (let box of boxes) {
+                box.disabled = false;
+                box.innerText = "";
+            }
+        };
+
+        const disableBoxes = () => {
+            for (let box of boxes) {
+                box.disabled = true;
+            }
+        };
+
+        const showWinner = (winner) => {
+            msg.innerText = `Congratulations, Winner is ${winner}`;
+            msgContainer.classList.remove('hide');
+            disableBoxes();
+        };
+
+        const checkWinner = () => {
+            let hasWin = false;
+            for (let pattern of winPatterns) {
+                let pos1Val = boxes[pattern[0]].innerText;
+                let pos2Val = boxes[pattern[1]].innerText;
+                let pos3Val = boxes[pattern[2]].innerText;
+
+                if (pos1Val !== "" && pos2Val!=="" && pos3Val!=="" && 
+                    pos1Val === pos2Val && pos2Val === pos3Val) {
+                    showWinner(pos1Val);
+                    hasWin = true;
+                    return;
+                }
+            }
+
+            if (!hasWin) {
+                const allBoxes = [...boxes].every((box) => box.innerText !== "");
+                if (allBoxes) {
+                    msgContainer.classList.remove('hide');
+                    msg.innerText = 'Match Drawn';
+                }
+            }
+        };
+
+        const resetGame = () => {
+            turnO = true;
+            enableBoxes();
+            msgContainer.classList.add('hide');
+        };
+
+        newGameBtn.addEventListener('click', resetGame);
+        resetBtn.addEventListener('click', resetGame);
+
+
+        // app.js
+
+// Complete logic of game inside this function
+const game = () => {
+    let playerScore = 0;
+    let computerScore = 0;
+    let moves = 0;
+
+
+    // Function to 
+    const playGame = () => {
+        const rockBtn = document.querySelector('.rock');
+        const paperBtn = document.querySelector('.paper');
+        const scissorBtn = document.querySelector('.scissor');
+        const playerOptions = [rockBtn, paperBtn, scissorBtn];
+        const computerOptions = ['rock', 'paper', 'scissors']
+
+        // Function to start playing game
+        playerOptions.forEach(option => {
+            option.addEventListener('click', function () {
+
+                const movesLeft = document.querySelector('.movesleft');
+                moves++;
+                movesLeft.innerText = `Moves Left: ${10 - moves}`;
+
+
+                const choiceNumber = Math.floor(Math.random() * 3);
+                const computerChoice = computerOptions[choiceNumber];
+
+                // Function to check who wins
+                winner(this.innerText, computerChoice)
+
+                // Calling gameOver function after 10 moves
+                if (moves == 10) {
+                    gameOver(playerOptions, movesLeft);
+                }
+            })
+        })
+
+    }
+
+    // Function to decide winner
+    const winner = (player, computer) => {
+        const result = document.querySelector('.result');
+        const playerScoreBoard = document.querySelector('.p-count');
+        const computerScoreBoard = document.querySelector('.c-count');
+        player = player.toLowerCase();
+        computer = computer.toLowerCase();
+        if (player === computer) {
+            result.textContent = 'Tie'
+        }
+        else if (player == 'rock') {
+            if (computer == 'paper') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+
+            } else {
+                result.textContent = 'Player Won'
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if (player == 'scissors') {
+            if (computer == 'rock') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            } else {
+                result.textContent = 'Player Won';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if (player == 'paper') {
+            if (computer == 'scissors') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            } else {
+                result.textContent = 'Player Won';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+    }
+
+    // Function to run when game is over
+    const gameOver = (playerOptions, movesLeft) => {
+
+        const chooseMove = document.querySelector('.move');
+        const result = document.querySelector('.result');
+        const reloadBtn = document.querySelector('.reload');
+
+        playerOptions.forEach(option => {
+            option.style.display = 'none';
+        })
+
+
+        chooseMove.innerText = 'Game Over!!'
+        movesLeft.style.display = 'none';
+
+        if (playerScore > computerScore) {
+            result.style.fontSize = '2rem';
+            result.innerText = 'You Won The Game'
+            result.style.color = '#308D46';
+        }
+        else if (playerScore < computerScore) {
+            result.style.fontSize = '2rem';
+            result.innerText = 'You Lost The Game';
+            result.style.color = 'red';
+        }
+        else {
+            result.style.fontSize = '2rem';
+            result.innerText = 'Tie';
+            result.style.color = 'grey'
+        }
+        reloadBtn.innerText = 'Restart';
+        reloadBtn.style.display = 'flex'
+        reloadBtn.addEventListener('click', () => {
+            window.location.reload();
+        })
+    }
+
+
+    // Calling playGame function inside game
+    playGame();
+
+}
+
+// Calling the game function
+game();
+
+
+
+// script.js
+
+// Array of words to choose from
+const words = [
+    "jhon",
+    "programmer",
+    "cavite",
+    "blue",
+    "pink",
+    "yellow",
+    "computer",
+    "science",
+];
+
+// Geting random word from the list
+let randomIndex = Math.floor(Math.random() * words.length);
+let selectedWord = words[randomIndex];
+console.log(selectedWord);
+
+// To store the already guessed letters
+let guessedlist = [];
+
+// For initial display Word
+let displayWord = "";
+for (let i = 0; i < selectedWord.length; i++) {
+    displayWord += "_ ";
+}
+document.getElementById("displayWord").textContent = displayWord;
+
+// Function to check Guessed letter
+function guessLetter() {
+    let inputElement = 
+        document.getElementById("letter-input");
+
+    // To check empty input
+    if (!inputElement.value) {
+        alert("Empty Input box. Please add input letter");
+        return;
+    }
+
+    let letter = inputElement.value.toLowerCase();
+
+    // Clear the input field
+    inputElement.value = "";
+
+    // Check if the letter has already been guessed
+    if (guessedlist.includes(letter)) {
+        alert("You have already guessed that letter!");
+        return;
+    }
+
+    // Add the letter to the guessed letters array
+    guessedlist.push(letter);
+
+    // Update the word display based on the guessed letters
+    let updatedDisplay = "";
+    let allLettersGuessed = true;
+    for (let i = 0; i < selectedWord.length; i++) {
+        if (guessedlist.includes(selectedWord[i])) {
+            updatedDisplay += selectedWord[i] + " ";
+        } else {
+            updatedDisplay += "_ ";
+            allLettersGuessed = false;
+        }
+    }
+    document.getElementById("displayWord")
+        .textContent = updatedDisplay;
+
+    // Check if all letters have been guessed
+    if (allLettersGuessed) {
+        alert("Congratulations! You guessed the word correctly!");
+    }
+}
+    </script>
+    </body>
+</html>
